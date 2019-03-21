@@ -1,0 +1,9 @@
+PROT_OUT=proto_out
+CC=g++ -Wall -I./3party/protobuff/include -g -I./${PROT_OUT}
+PROT=./3party/protobuff/bin/protoc
+main: main_proto.cpp 
+	$(CC) -o proto_example main_proto.cpp ./${PROT_OUT}/first.pb.cc -L./3party/protobuff/lib -lprotobuf -Wl,-rpath,./3party/protobuff/lib
+
+
+gen: first.proto
+	$(PROT) --cpp_out=${PROT_OUT} first.proto
