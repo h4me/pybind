@@ -7,3 +7,9 @@ main: main_proto.cpp
 
 gen: first.proto
 	$(PROT) --cpp_out=${PROT_OUT} first.proto
+
+
+
+##################
+#  https://github.com/protocolbuffers/protobuf.git
+##########
